@@ -1,0 +1,358 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('../fonts/Playfair-Display.ttf.woff') format('woff'), url('../fonts/Playfair-Display.ttf.svg#Playfair-Display') format('svg'), url('../fonts/Playfair-Display.ttf.eot'), url('../fonts/Playfair-Display.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Abril Fatface';
+  src: url('../fonts/Abril-Fatface.ttf.woff') format('woff'), url('../fonts/Abril-Fatface.ttf.svg#Abril-Fatface') format('svg'), url('../fonts/Abril-Fatface.ttf.eot'), url('../fonts/Abril-Fatface.ttf.eot?#iefix') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+a, a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: red;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  line-height: 22px;
+  font-size: 18px;
+  overflow-x: hidden;
+  color: #333;
+  background: #fff;
+  font-family: Arial, helvetica;
+}
+
+b {
+  font-weight: 600;
+  color: #ddd;
+}
+
+.add-top {
+  margin-top: 120px !important;
+}
+
+.half-top {
+  margin-top: 60px !important;
+}
+
+.add-bottom {
+  margin-bottom: 120px !important;
+}
+
+.half-bottom {
+  margin-bottom: 60px !important;
+}
+
+.section {
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.info_content {
+  font-size: 15px;
+}
+
+.info_content h3 {
+  font-weight: bold;
+}
+
+.info_content h4 {
+  font-style: italic;
+}
+
+.info_date {
+  background: #000;
+  color: #fff;
+  padding: 0 4px 2px 4px;
+  display: inline-block;
+  margin-bottom: 4px;
+}
+
+canvas {
+  pointer-events: none;
+  position: absolute;
+}
+
+.highlight {
+  color: #9fc8f0;
+}
+
+.bullet {
+  color: #333;
+  vertical-align: middle;
+  padding-left: 1px;
+  font-size: 32px;
+}
+
+.bullet.active {
+  color: red;
+}
+
+.ok .bullet.active {
+  color: green;
+}
+
+.injured .bullet.active {
+  color: orange;
+}
+
+#days .night .bullet.active {
+  color: yellow;
+}
+
+#days .day .bullet.active {
+  color: #00aef0;
+}
+
+#pedestrians .bullet.active {
+  color: #e4a478;
+}
+
+#cyclists .bullet.active {
+  color: #b8d072;
+}
+
+#motorists .bullet.active {
+  color: #496b8e;
+}
+
+#days .bullet.active {
+  color: #9fc8f0;
+}
+
+h1 {
+  font-family: 'Abril Fatface', Georgia, Times;
+  color: #000;
+  font-weight: 400;
+  padding-top: 10px;
+  font-size: 75px;
+  line-height: 80px;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-weight: 800;
+  padding-bottom: 15px;
+  display: inline;
+  line-height: 24px;
+}
+
+.sub {
+  font-size: 18px;
+  text-align: center;
+  padding-top: 20px;
+  color: #000;
+}
+
+.sub a {
+  color: #555;
+}
+
+.sub a:hover {
+  color: #dd0000;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.main-menu {
+  position: absolute;
+  z-index: 999;
+  color: #fff;
+  background: #333;
+  box-shadow: 1px 0 15px rgba(100, 0, 0, 0.07);
+}
+
+.hidden {
+  left: 200px !important;
+}
+
+ul.menu {
+  list-style: none;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: normal;
+  line-height: 1.1em;
+  position: fixed;
+  bottom: 0px;
+  right: 0px;
+  width: 200px;
+  height: 100%;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+ul.menu li {
+  float: left;
+  position: relative;
+  height: 100%;
+  width: 200px;
+}
+
+ul.menu li>a {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 150px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  color: #ddd;
+  letter-spacing: 1px;
+  cursor: pointer;
+  text-decoration: none;
+  background: #111;
+}
+
+div.sc_menu_wrapper {
+  position: absolute;
+  top: 0px;
+  width: 185px;
+  overflow: hidden;
+  bottom: 0px;
+  left: 0px;
+  visibility: hidden;
+  background: #222;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.sc_menu {
+  width: 200px;
+  /*visibility: hidden;*/
+  background: #111;
+}
+
+.thumb {
+  position: relative;
+  cursor: pointer;
+}
+
+.thumb a:hover {
+  color: yellow;
+  text-decoration: none;
+}
+
+.thumb:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: none;
+  -moz-transition: background .3s linear;
+  -webkit-transition: background .3s linear;
+  -o-transition: background .3s linear;
+  transition: background .3s linear;
+}
+
+.thumb:hover:before {
+  background: rgba(0, 174, 239, 0.9);
+}
+
+.quote {
+  width: 62%;
+  min-width: 400px;
+  margin: 0 auto 0 auto;
+  line-height: 180%;
+  font-family: 'Playfair Display', helvetica, 'Open Sans', sans-serif;
+  text-align: center;
+  font-style: italic;
+  color: #ddd;
+  height: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-box-pack: center;
+  -webkit-box-align: center;
+  display: -moz-box;
+  -moz-box-orient: vertical;
+  -moz-box-pack: center;
+  -moz-box-align: center;
+  display: box;
+  box-orient: vertical;
+  box-pack: center;
+  box-align: center;
+}
+
+.caption {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+  width: 120px;
+  /*background: #000;*/
+  padding: 4px;
+}
