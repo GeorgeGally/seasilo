@@ -157,33 +157,43 @@ $(function(){
       $(this).css('visibility','visible');
 
     })
-    // var f	=	function(){
-		// 	if(pos==0) clearTimeout(stacktime);
-		// 	$this.next()
-		// 		 .find('.thumb:nth-child('+pos+')')
-		// 		 .css('visibility','visible');
-		// 	--pos;
-		// };
-
-		/* each thumb will appear with a delay*/
-
-		//stacktime = setInterval(f , 1);
 	});
 
 	/* on mouseleave of the whole <li> the scrollable area is hidden */
 
 	$('#menu li').bind('mouseleave',function () {
 		var $this = $(this);
-		//clearTimeout(stacktime);
     $('.sc_menu_wrapper').addClass('hidden');
-		// $this.find('.sc_menu')
-		// 	 .css('visibility','hidden')
-			//  .find('.thumb')
-			//  .css('visibility','hidden');
-		//$this.find('.sc_menu_wrapper')
-			 //.css('visibility','hidden');
-    //   .css('right','-200px');
 	});
+
+var startx = 0;
+var starty = 0;
+    document.body.addEventListener('touchstart', function(e){
+           touchobj = e.changedTouches[0] // reference first touch point
+           startx = parseInt(touchobj.clientX) // get x coord of touch point
+           starty = parseInt(touchobj.clientY)
+           //e.preventDefault() // prevent default click behavior
+       }, false)
+
+    document.body.addEventListener('touchend', function(e){
+            touchobj = e.changedTouches[0] // reference first touch point for this event
+            var dist = parseInt(touchobj.clientX) - startx // calculate dist traveled by touch point
+            console.log("end:" + dist);
+            if(dist> 0) {
+              var $this = $(this);
+              $('.sc_menu_wrapper').addClass('hidden');
+            } else if (dist < 0) {
+                      var $this = $('#menu li > a');
+                      buildThumbs($this);
+                      $('.sc_menu_wrapper').removeClass('hidden');
+                      $('.thumb').each(function(){
+                        $(this).css('visibility','visible');
+                      })
+                    }
+            //e.preventDefault()
+        }, false)
+
+
 
   $('.thumb').bind('click',function () {
       var num = $(this.classList[1]).selector.substring(3,4);
@@ -203,21 +213,21 @@ $(function(){
 
 
 
-var hashTagActive = "";
-$(".scroll").on("click touchstart" , function (event) {
-      if(hashTagActive != this.hash) { //this will prevent if the user click several times the same link to freeze the scroll.
-          event.preventDefault();
-          //calculate destination place
-          var dest = 0;
-          if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
-              dest = $(document).height() - $(window).height();
-          } else {
-              dest = $(this.hash).offset().top;
-          }
-          //go to destination
-          $('html,body').animate({
-              scrollTop: dest
-          }, 2000, 'swing');
-          hashTagActive = this.hash;
-      }
-  });
+//var hashTagActive = "";
+// $(".scroll").on("click" , function (event) {
+//       if(hashTagActive != this.hash) { //this will prevent if the user click several times the same link to freeze the scroll.
+//           event.preventDefault();
+//           //calculate destination place
+//           var dest = 0;
+//           if ($(this.hash).offset().top > $(document).height() - $(window).height()) {
+//               dest = $(document).height() - $(window).height();
+//           } else {
+//               dest = $(this.hash).offset().top;
+//           }
+//           //go to destination
+//           $('html,body').animate({
+//               scrollTop: dest
+//           }, 2000, 'swing');
+//           hashTagActive = this.hash;
+//       }
+//   });

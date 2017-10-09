@@ -43,7 +43,7 @@ rbvj = function() {
             drawOrbits(p);
 
 
-            counter+= Math.round(p.size2);
+            counter+= Math.round(p.size);
             ctx2.lineWidth = 1;
             //ctx2.line(p.pos.x, p.pos.y, p.pos.x, h);
     }
@@ -52,7 +52,8 @@ rbvj = function() {
 
 
   function drawArm(p){
-    ctx2.fillStyle = "#00aeef";
+    //ctx2.fillStyle = "#00aeef";
+    ctx2.fillStyle = "#dd0000";
     ctx2.LfillEllipse(p.pos.x, p.pos.y, 5, 5);
   }
 
@@ -67,7 +68,8 @@ rbvj = function() {
     ctx2.HfillEllipse(p.orbit.x, p.orbit.y, p.size/1, p.size/1);
     ctx2.fillStyle = rgba(0);
     ctx2.LfillEllipse(p.orbit.x, p.orbit.y, 3, 3);
-    ctx2.strokeStyle = "#00aeef";
+    //ctx2.strokeStyle = "#00aeef";
+    ctx2.strokeStyle = "#000000";
     ctx2.line(p.pos.x, p.pos.y, p.orbit.x, p.orbit.y);
 
   }
@@ -87,7 +89,7 @@ rbvj = function() {
 
   function drawGraphWhite(txt, _num, sub, sub2){
 
-    ctx4.font = "16px Arial";
+    //ctx4.font = "16px Arial";
     ctx4.textAlign = "left";
 
     ctx4.clearRect(0,0,w,h);
@@ -97,14 +99,13 @@ rbvj = function() {
     ctx4.fillRect(0, ht, w, 90);
 
     ctx4.fillStyle = rgb(0);
-    ctx4.shadowColor= rgb(255);
-    ctx4.shadowBlur=3;
+    ctx4.shadowColor= rgb(255, 0.5);
+    ctx4.shadowBlur = 4;
+    ctx.shadowOffsetY = 2;
     var pos = map(counter, 0, _num, 0, w);
 
-
-
-      ctx4.fillStyle = rgb(0);
-      ctx4.fillText(txt  + " " + counter, 10, ht + 35);
+    ctx4.fillStyle = rgb(0);
+    ctx4.fillText(txt  + " " + counter, 10, ht + 35);
 
     if(frameCount < 1200) {
 

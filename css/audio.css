@@ -114,3 +114,54 @@ audio {
     transition: 1s;
     top: 0 !important;
 }
+
+
+@media only screen and (min-width: 300px) and (max-width: 767px) {
+    #artistInfo {
+      font-size: 15px;
+      line-height: 16px;
+  }
+  #trackInfo, #trackInfo a {
+  	font-size: 15px;
+  	line-height: 18px;
+  }
+  #artistInfo, #artistInfo a, #trackInfo, #trackInfo a {
+    margin-left: 0px;
+  }
+  #audioplayer {
+    background: #efefef;
+  }
+#timeline {
+    width: calc(80% - 80px);
+    height: 8px;
+    margin-top: 45px;
+    margin-right: 0px;
+  }
+  #soundcloudLogo {
+    margin: 18px 17px 0 10px;
+}
+#playButton {
+    height: 30px;
+    width: 30px;
+  }
+#trackImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  }
+
+  @media only screen and (min-width: 768px) and (max-width: 1000px) {
+    #soundcloudLogo {
+      margin: 35px 17px 0 10px;
+  }
+  #timeline {
+    width: calc(82% - 60px);
+  }
+  #artistInfo, #artistInfo a, #trackInfo, #trackInfo a {
+    margin-left: 0px;
+  }
+  #trackInfo, #trackInfo a {
+    line-height: 20px;
+  }
+  }
