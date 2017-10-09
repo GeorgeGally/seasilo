@@ -1,8 +1,8 @@
 rbvj = function() {
 
   var txt = "Number of containers being transported today:";
-  var sub = "There are 17 million shipping containers in the world, of which 6 million are on the move at any time.";
-  var sub2 = "The largest ships can hold 20 000 containers.";
+  var sub = "17 million shipping containers in the world, 6 million are on the move at any time.";
+  var sub2 = "The largest container ships hold more than 20 000 containers.";
 
   var TOTAL = 6000000;
   var MAXPARTICLES = 12000;

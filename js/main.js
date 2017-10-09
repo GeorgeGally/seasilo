@@ -57,7 +57,7 @@ function drawGraph(txt, _num, sub, sub2){
     ctx4.fillStyle = rgb(255);
     ctx4.fillText(txt  + " " + counter, 10, ht + 35);
 
-  if(frameCount < 1200) {
+  if(frameCount < 2200) {
 
     ctx4.font = "15px Arial";
     ctx4.fillStyle = rgb(175);
