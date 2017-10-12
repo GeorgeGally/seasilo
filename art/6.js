@@ -3,9 +3,9 @@ rbvj = function() {
   //clearCanvases();
 
   var txt = "Number of containers lost at sea in a year: ";
-  var sub = "Although spills have rapidly decreased over the years, it's thought these numbers are vastly under-reported.";
-  var sub2 = "The single largest container spill was the MOL Comfort in 2013, with the loss of 4293 containers into the Indian Ocean";
-
+  var sub = "The single largest container spill was the MOL Comfort in 2013,";
+  var sub2 = "with the loss of 4293 containers into the Indian Ocean";
+  counter = 0;
   var TOTAL = 1582;
 
   var grid = new Grid (1, 1, w/2 ,h/2, w/4, h/4)

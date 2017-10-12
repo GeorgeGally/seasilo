@@ -1,8 +1,8 @@
 rbvj = function() {
 
-  var txt = "Number of containers being transported today:";
-  var sub = "17 million shipping containers in the world, 6 million are on the move at any time.";
-  var sub2 = "The largest container ships hold more than 20 000 containers.";
+  var txt = "Number of containers transported today:";
+  var sub = "17m containers worldwide, 6m on the move at any time.";
+  var sub2 = "The largest ships hold 20 000+ containers.";
 
   var TOTAL = 6000000;
   var MAXPARTICLES = 12000;
@@ -21,14 +21,16 @@ rbvj = function() {
   var MAXSPEED = 20;
   ctx.background(0);
 
-
+  for (var i = 0; i < 200; i++) {
+    addParticle();
+  }
 
   draw = function() {
     ctx2.clearRect(0, 0, w, h);
     ctx.background(0, 0.2);
 
     if (engine.particles.length < MAXPARTICLES) {
-      for (var i = 0; i < 5; i++) {
+      for (var i = 0; i < 25; i++) {
         addParticle();
       }
     }

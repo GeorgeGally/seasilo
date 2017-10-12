@@ -3,11 +3,11 @@ rbvj = function() {
 
   var engine = new particleEngine(30, 40);
 
-  var TOTAL = 6000000/12;
-  var txt = "Number of containers entering the US every month:";
-  var sub = "6 million containers enter the US each year, worth over $1.8 trillion";
-  var sub2 = "";
-
+  var TOTAL = 21413;
+  var txt = "Number of containers carried by the OOCL Hong Kong:";
+  var sub = "As long as the Empire State Building is high,";
+  var sub2 = "the world's largest ship has a volume of over 200 000 tonnes.";
+  counter = 0;
 
   for (var i = 0; i < engine.particles.length; i++) {
     var p = engine.particles[i];

@@ -69,8 +69,8 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 html, body {
   margin: 0;
   height: 100%;
-  line-height: 22px;
-  font-size: 18px;
+  line-height: 24px;
+  font-size: 22px;
   overflow-x: hidden;
   color: #333;
   background: #fff;
@@ -104,204 +104,252 @@ b {
 }
 
 canvas {
-  position: relative;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-.info_content {
-  font-size: 15px;
-}
-
-.info_content h3 {
-  font-weight: bold;
-}
-
-.info_content h4 {
-  font-style: italic;
-}
-
-.info_date {
-  background: #000;
-  color: #fff;
-  padding: 0 4px 2px 4px;
-  display: inline-block;
-  margin-bottom: 4px;
-}
-
-canvas {
   pointer-events: none;
   position: absolute;
+  top: 0;
+  left: 0;
 }
 
-.highlight {
-  color: #9fc8f0;
+
+.under_bar {
+  position: absolute;
+  z-index: 98;
+  width: 100%;
+  height: 100px;
+  background: rgba(0,0,0, 0.4);
+  bottom: 50px;
 }
 
-.bullet {
-  color: #333;
-  vertical-align: middle;
-  padding-left: 1px;
-  font-size: 32px;
+.bar {
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+  height: 6px;
+  background: #fff;
+  bottom: 150px;
 }
 
-.bullet.active {
-  color: red;
+.red_bar {
+  position: absolute;
+  z-index: 99;
+  width: 50%;
+  height: 6px;
+  background: #ff0000;
+  bottom: 150px;
 }
 
-.ok .bullet.active {
-  color: green;
+.graph_subtitle {
+  position: absolute;
+  z-index: 99;
+  color: #fff;
+  bottom: 106px;
+  left: 20px;
+  font-size: 16px
 }
 
-.injured .bullet.active {
+.graph_subtitle2 {
+  position: absolute;
+  z-index: 99;
+  color: #aaa;
+  bottom: 76px;
+  left: 20px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+
+
+/* AUDIO*/
+
+audio {
+  position: fixed;
+  bottom: 10px;
+  z-index: 10;
+  width: 100%;
+}
+
+#audioplayer {
+  z-index: 9999;
+  width: 100%;
+  position: absolute;
+  background: rgba(0,0,0, 0.0);
+  height: 100%;
+  padding-top: 0px;
+  top: calc(-100% + 35px);
+  transition: 1s;
+
+}
+#audioplayer.open  {
+  background: rgba(0,0,0, 0.9);
+}
+#audiocontainer {
+  height: 80px;
+  position: relative;
+  background: #fff
+}
+
+#playButton {
+  height: 30px;
+  width: 30px;
+  border: none;
+  background-size: 50% 50%;
+  background-position: center;
+  float: left;
+  cursor: pointer;
+  margin-top: 10px;
+  margin-right: 8px;
+  margin-bottom: 30px;
+}
+
+.play {
+  background: url('../img/play.png') no-repeat;
+}
+
+.pause {
+  background: url('../img/pause.png') no-repeat;
+}
+
+#trackImage {
+  width: 40px;
+  height: 40px;
+  float: left;
+  background: #111;
+  margin: 10px 10px 0 10px;
+  display: inline-block;
+}
+
+#timeline {
+  width: calc(100% - 170px);
+  height: 4px;
+  background: #eee;
+  margin-top: 40px;
+  margin-bottom: 10px;
+  border-radius: 1px;
+  cursor: pointer;
+  position: relative;
+  display: block;
+  float: left;
+}
+
+#playtime {
+  font-family: helvetica, arial, sans;
+  float: right;
+  margin-left: 0px;
+  margin-top: -2px;
+  font-size: 10px;
+  color: #888;
+}
+
+#playhead {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid #eee;
+  margin-top: -4px;
+  background: rgb(0, 174, 239);
+}
+
+#artistInfo, #artistInfo a, #trackInfo, #trackInfo a {
+  font-family: helvetica, arial, sans;
+  text-decoration: none;
+  color: #37adea;
+}
+
+#artistInfo, #trackInfo, #trackInfo a {
+  font-size: 14px;
+  line-height: 16px;
+  color: #222;
+  display: block;
+}
+
+#artistInfo {
+  margin-left: 6px;
+}
+
+#artistInfo a:hover, #trackInfo a:hover {
+  text-decoration: underline;
   color: orange;
 }
 
-#days .night .bullet.active {
-  color: yellow;
+#soundcloudLogo {
+  position: absolute;
+  right: 0px;
+  bottom: -40px;
 }
 
-#days .day .bullet.active {
-  color: #00aef0;
+.wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
 }
 
-#pedestrians .bullet.active {
-  color: #e4a478;
-}
 
-#cyclists .bullet.active {
-  color: #b8d072;
-}
+/* END AUDIO*/
 
-#motorists .bullet.active {
-  color: #496b8e;
-}
 
-#days .bullet.active {
-  color: #9fc8f0;
-}
+
+
 
 h1 {
   font-family: 'Abril Fatface', Georgia, Times;
   color: #000;
   font-weight: 400;
-  padding-top: 10px;
-  font-size: 75px;
+  padding-top: 140px;
+  font-size: 90px;
   line-height: 80px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
+  letter-spacing: -1px;
 }
 
-h2 {
-  font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 12px;
-}
-
-h3 {
-  font-weight: 800;
-  padding-bottom: 15px;
-  display: inline;
-  line-height: 24px;
-}
-
-.sub {
-  font-size: 18px;
-  text-align: center;
-  padding-top: 20px;
-  color: #000;
-}
-
-.sub a {
-  color: #555;
-}
-
-.sub a:hover {
-  color: #dd0000;
-}
 
 .bold {
   font-weight: 600;
 }
 
-.main-menu {
+
+
+.menu_icon {
   position: absolute;
-  z-index: 999;
-  color: #fff;
-  background: #333;
-  box-shadow: 1px 0 15px rgba(100, 0, 0, 0.07);
-}
-
-.hidden {
-  left: 200px !important;
-}
-
-ul.menu {
-  list-style: none;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  letter-spacing: normal;
-  line-height: 1.1em;
-  position: fixed;
-  bottom: 0px;
-  right: 0px;
-  width: 200px;
-  height: 100%;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-}
-
-ul.menu li {
-  float: left;
-  position: relative;
-  height: 100%;
-  width: 200px;
-}
-
-ul.menu li>a {
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
-  width: 150px;
-  height: 40px;
-  text-align: center;
-  line-height: 40px;
-  color: #ddd;
-  letter-spacing: 1px;
-  cursor: pointer;
-  text-decoration: none;
-  background: #111;
-}
-
-div.sc_menu_wrapper {
-  position: absolute;
-  top: 0px;
-  width: 200px;
+  bottom: 15px;
+  left: 20px;
+  font-size: 14px;
+  width: 100%;
   overflow: hidden;
-  bottom: 0px;
-  left: 0px;
-  visibility: hidden;
-  background: #222;
-  -moz-transition: all 0.3s linear;
-  -webkit-transition: all 0.3s linear;
-  -o-transition: all 0.3s linear;
-  transition: all 0.3s linear;
+  display: block;
+  a.menu_icon {
+    -moz-transition: background 1.2s linear;
+    -webkit-transition: background 1.2s linear;
+    -o-transition: background 1.2s linear;
+    transition: background 1.2s linear;
+  }
+}
+a.menu_icon {
+    color: #00aeef;
 }
 
-.sc_menu {
-  width: 200px;
-  /*visibility: hidden;*/
-  background: #111;
+
+.open {
+  top: 0px !important;
 }
 
 .thumb {
+  color: #eee;
   position: relative;
   cursor: pointer;
+  float: left;
+  display: inline-block;
+  width: 12.5%;
+  overflow: hidden;
+  height: 100px;
+}
+.thumb img {
+  min-width: 100%;
+  height: auto;
 }
 
 .thumb a:hover {
-  color: yellow;
+  color: #ee0000;
   text-decoration: none;
 }
 
@@ -313,7 +361,7 @@ div.sc_menu_wrapper {
   bottom: 0;
   left: 0;
   right: 0;
-  background: none;
+  background: rgba(0, 0, 0, 0.4);
   -moz-transition: background .3s linear;
   -webkit-transition: background .3s linear;
   -o-transition: background .3s linear;
@@ -324,9 +372,55 @@ div.sc_menu_wrapper {
   background: rgba(0, 174, 239, 0.9);
 }
 
+.caption {
+  font-family: arial, helvetica, sans-serif;
+  position: absolute;
+  top: 40px;
+  left: 15px;
+  z-index: 2;
+  width: 80%;
+  font-size: 16px;
+  line-height: 110%;
+  padding: 4px;
+}
+
+.intro {
+  width: 70%;
+  margin: 0 auto 0 auto;
+  display: block;
+  line-height: 200%;
+  font-family: 'Playfair Display', helvetica, sans-serif;
+  text-align: center;
+  color: #000;
+  max-width: 780px;
+  font-size: 100%;
+  padding-top: 40px;
+}
+
+
+.sub {
+  color: #000;
+  width: 100%;
+  font-family: 'Playfair Display', helvetica, sans-serif;
+  text-align: center;
+  font-style: normal;
+  font-weight: 900;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.sub a {
+  color: #000;
+}
+
+.sub a:hover {
+  color: #dd0000;
+}
+
+
 .quote {
   width: 62%;
-  min-width: 350px;
+  min-width: 260px;
   margin: 0 auto 0 auto;
   line-height: 180%;
   font-family: 'Playfair Display', helvetica, 'Open Sans', sans-serif;
@@ -348,160 +442,950 @@ div.sc_menu_wrapper {
   box-align: center;
 }
 
-.caption {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  z-index: 2;
-  width: 120px;
-  /*background: #000;*/
-  padding: 4px;
-}
 
-.intro {
-  width: 98%;
-  margin: 0 auto 0 auto; ;
-  display: block;
-  line-height: 180%;
-  font-family: 'Playfair Display', helvetica, sans-serif;
-  text-align: center;
-  color: #000;
-  max-width: 600px
-}
 
-canvas { font-size: : 16px;
+canvas {
+  font-size: : 16px;
   font-family: arial, helvetica;
-
 }
 
-.byline {
-  color: #000; width: 100%;
-  font-family: 'Playfair Display', helvetica, sans-serif;
-  text-align: center; font-style: normal;
-  font-weight: 900;
-}
 
-div.sc_menu_wrapper {
-  position: absolute;
-  top: 30px;
-}
+/* MEDIA QUERIES */
 
-@media only screen and (max-width: 350px) {
-    canvas {
-      font-size: : 13px;
-      letter-spacing: -1px;
+
+/* IPHONE 5 320x568 */
+
+@media only screen and (min-width: 319px) and (max-width: 359px) {
+  #audioplayer {
+    height: 100%;
+    top: calc(-100% + 38px);
   }
-    ul.menu {
-      right: -50px;
-    }
-    .intro {
-      width: 100%;
-      line-height: 140%;
-      font-size: 13px;
-    }
-    h1 {
-    font-size: 55px;
-    padding-bottom: 0;
-    }
-    .quote {
-    width: 85%;
-    min-width: 200px;
+  #audiocontainer {
+    height: 100px;
+  }
+  #trackImage {
+    margin: 10px;
+    width: 80px;
+    height: 80px;
+  }
+  #timeline {
+    width: calc(100% - 150px);
+    margin-top: 22px;
+  }
+  #playtime {
+    margin-top: -28px
+  }
+  #artistInfo, #trackInfo, #trackInfo a {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .caption {
     font-size: 15px;
-    line-height: 22px;
-    }
-    .byline {
-      margin-top: -20px;
-    }
-    .half-top {
-    margin-top: 20px !important;
-  }
-  .half-bottom {
-      margin-bottom: 20px !important;
-  }
-
-  }
-
-
-  @media only screen and (min-width: 351px) and (max-width: 376px) {
-      canvas {
-        font-size: : 13px;
-        letter-spacing: -1px;
-    }
-      ul.menu {
-        right: -50px;
-      }
-      .intro {
-        width: 100%;
-        line-height: 155%;
-        font-size: 15px;
-      }
-      h1 {
-      font-size: 55px;
-      padding-bottom: 0;
-      }
-      .quote {
-      width: 85%;
-      min-width: 200px;
-      font-size: 17px;
-      line-height: 25px;
-      }
-      .byline {
-        margin-top: -20px;
-      }
-      .half-top {
-      margin-top: 20px !important;
-    }
-    .half-bottom {
-        margin-bottom: 20px !important;
-    }
-
-    }
-
-
-@media only screen and (min-width: 376px) and (max-width: 767px) {
-    canvas {
-      font-size: : 13px;
-      letter-spacing: -1px;
-  }
-    ul.menu {
-      right: -50px;
-    }
-    .intro {
-      width: 100%;
-      line-height: 140%;
-    }
-    .half-top {
-    margin-top: 20px !important;
-  }
-  .half-bottom {
-      margin-bottom: 20px !important;
-  }
-  div.sc_menu_wrapper {
-    position: absolute;
+    line-height: 18px;
     top: 30px;
+    width: 80%;
+    text-align: center;
   }
+  #playButton {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+  #soundcloudLogo {
+    right: 0px;
+    bottom: -70px;
+  }
+  .intro {
+    width: 80%;
+    line-height: 150%;
+    font-size: 60%;
+    padding-top: 5px;
+  }
+  h1 {
+    font-size: 220%;
+    padding-top: 50px;
+    padding-bottom: 0px;
+  }
+  .sub {
+    font-size: 14px;
+    padding: 0;
+  }
+  .quote {
+    width: 75%;
+    line-height: 160%;
+    font-size: 65%;
+    margin-top: 20px;
+  }
+  .half-top {
+    margin-top: 20px !important;
+  }
+  .half-bottom {
+    margin-bottom: 20px !important;
+  }
+  .thumb {
+    width: 50%;
+    overflow: hidden;
+    height: calc(40% - 8px);
+  }
+  .thumb img {
+    width: 100%;
+    height: 112px;
+  }
+  .menu_wrapper {
+    height: calc(100% - 288px);
+    background: #111;
+  }
+  a.menu_icon {
+    bottom: 8px;
+  }
+  .open a.menu_icon {
+    bottom: 15px;
+  }
+}
+
+
+/* GALAXY S5 360x640 */
+
+@media only screen and (min-width: 360px) and (max-width: 374px) {
+  #audioplayer {
+    height: 100%;
+    top: calc(-100% + 41px);
+  }
+  #audiocontainer {
+    height: 113px;
+  }
+  #trackImage {
+    margin: 8px 2px 0px 8px;
+    width: 98px;
+    height: 98px;
+  }
+  #playButton {
+    height: 30px;
+    width: 30px;
+    margin-top: 15px;
+  }
+  #timeline {
+    width: calc(100% - 160px);
+    margin-top: 30px;
+  }
+  #trackInfo {
+    margin-top: 0px;
+  }
+  #artistInfo, #artistInfo a, #trackInfo, #trackInfo a {
+    font-size: 75%;
+    line-height: 120%;
+  }
+  #playtime {
+    font-size: 10px;
+  }
+  #soundcloudLogo {
+    bottom: -70px;
+    right: 0px;
+  }
+  a.menu_icon {
+    bottom: 10px;
+  }
+  .thumb {
+    width: 50%;
+    height: calc(25% - 39px);
+  }
+  .thumb img {
+    min-width: 100%;
+    height: 120px;
+  }
+  .caption {
+    font-size: 16px;
+    line-height: 22px;
+    top: 15px;
+    width: 85%
   }
 
-  @media only screen and (min-width: 768px) and (max-width: 1025px) {
-      canvas {
-        font-size: : 16px;
-        letter-spacing: 0px;
+  .intro {
+    width: 80%;
+    line-height: 145%;
+    font-size: 62%;
+    padding-top: 25px;
+  }
+  h1 {
+    font-size: 250%;
+    padding-top: 70px;
+    padding-bottom: 0px;
+  }
+  .sub {
+    font-size: 14px;
+  }
+  .quote {
+    width: 80%;
+    line-height: 180%;
+    font-size: 70%;
+    margin-top: 20px;
+  }
+  .half-bottom {
+    margin-bottom: 45px !important;
+  }
+}
+
+
+/* IPHONE 6 */
+
+@media only screen and (min-width: 375px) and (max-width: 411px) {
+  #audioplayer {
+    top: calc(-100% + 45px);
+  }
+  #audiocontainer {
+    height: 105px;
+  }
+  #trackImage {
+    margin: 8px 5px 0px 8px;
+    width: 88px;
+    height: 88px;
+  }
+  #playButton {
+    height: 30px;
+    width: 30px;
+    margin-top: 10px;
+  }
+  #timeline {
+    width: calc(100% - 170px);
+    margin-top: 25px;
+  }
+  #artistInfo, #artistInfo a, #trackInfo, #trackInfo a {
+    font-size: 80%;
+    line-height: 100%;
+  }
+  #soundcloudLogo {
+    bottom: -68px;
+    right: -18px;
+  }
+  .intro {
+    width: 85%;
+    line-height: 140%;
+    font-size: 68%;
+    padding-top: 20px;
+  }
+  .quote {
+    width: 52%;
+    line-height: 180%;
+    font-size: 80%;
+    margin-top: 20px;
+  }
+  h1 {
+    font-size: 300%;
+    padding-top: 80px;
+    padding-bottom: 0px;
+  }
+  .sub {
+    font-size: 14px;
+  }
+  a.menu_icon {
+    margin-left: 10px;
+    bottom: 12px;
+  }
+  .thumb {
+    height: 128px;
+    width: 50%;
+  }
+  .thumb img {
+    min-width: 100%;
+    height: 126px;
+  }
+  .caption {
+    font-size: 16px;
+    line-height: 22px;
+    top: 15px;
+    width: 85%
+  }
+  .half-bottom {
+    margin-bottom: 20px !important;
+  }
+}
+
+/* NEXUS 5X 412x732 */
+/* NEXUS 6P 412x732 */
+/* IPHONE 6 PLUS 414x736 */
+
+@media only screen and (min-width: 412px) and (max-width: 567px) {
+  #audioplayer {
+    top: calc(-100% + 40px);
+  }
+  #audiocontainer {
+    height: 97px;
+  }
+  #trackImage {
+    margin: 13px 6px 0px 12px;
+    width: 70px;
+    height: 70px;
+  }
+  #playButton {
+    height: 30px;
+    width: 30px;
+    margin-top: 12px;
+  }
+  #playButton {
+    margin-top: 6px;
+  }
+
+  #timeline {
+    width: calc(100% - 140px);
+    margin-top: 20px;
+  }
+  #trackInfo {
+    font-size: 6px;
+    /*margin-top: -15px;*/
+  }
+  #artistInfo, #artistInfo a, #trackInfo, #trackInfo a {
+    font-size: 82%;
+    line-height: 110%;
+  }
+  #soundcloudLogo {
+    bottom: -62px;
+    right: -2px;
+  }
+  .intro {
+    width: 80%;
+    line-height: 140%;
+    font-size: 75%;
+    padding-top: 20px;
+  }
+  h1 {
+    font-size: 300%;
+    padding-bottom: 8px;
+    padding-top: 80px;
+  }
+  .sub {
+    font-size: 14px;
+  }
+  .quote {
+    width: 76%;
+    line-height: 180%;
+    font-size: 74%;
+    margin-top: 20px;
+  }
+  .thumb {
+    height: calc(20% - 1px );
+    width: 50%;
+  }
+  .thumb img {
+    min-width: 100%;
+    height: auto;
+  }
+  .caption {
+    font-size: 18px;
+    line-height: 22px;
+    top: 25px;
+    width: 85%
+  }
+  .menu_icon {
+    bottom: 9px;
+  }
+  .open .menu_icon {
+    bottom: 15px;
+  }
+  .half-bottom {
+    margin-bottom: 30px !important;
+  }
+}
+
+/* IPHONE 5 LANDSCAPE 568x320 */
+
+@media only screen and (min-width: 568px) and (max-width: 598px) {
+  #audioplayer {
+    height: 100%;
+    top: calc(-100% + 40px);
+  }
+  #audiocontainer {
+    height: 90px;
+  }
+  #trackImage {
+    margin: 6px 5px 0px 6px;
+    width: 80px;
+    height: 80px;
+  }
+  #playButton {
+    height: 30px;
+    width: 30px;
+    margin-top: 7px;
+  }
+  #timeline {
+    width: calc(100% - 150px);
+    margin-top: 20px;
+  }
+  #playtime{
+    font-size: 10px;
+  }
+  #soundcloudLogo {
+    right: 0px;
+    bottom: -56px;
+  }
+  #artistInfo, #artistInfo a, #trackInfo, #trackInfo a {
+    font-size: 80%;
+    line-height: 110%;
+  }
+  h1 {
+    font-size: 220%;
+    padding-top: 40px;
+    padding-bottom: 0px;
+  }
+  .sub {
+    font-size: 13px;
+    margin-bottom: 15px;
     }
-    .byline {
-    padding-bottom: 20px;
+  .intro {
+    width: 90%;
+    line-height: 130%;
+    font-size: 50%;
+    padding-top: 0px;
+  }
+
+  .quote {
+    width: 80%;
+    line-height: 160%;
+    font-size: 60%;
+    padding-top: 20px;
+  }
+  a.menu_icon {
+    bottom: 10px;
+  }
+  .open a.menu_icon {
+    top: auto;
+    bottom: 10px;
+    }
+  .thumb {
+    height: 93px;
+    width: 25%;
+    overflow: hidden;
+  }
+  .thumb img {
+      width: 100%;
+      height: 100%;
+  }
+  .caption {
+    font-size: 14px;
+    line-height: 16px;
+    top: 25px;
+    width: 85%
+  }
+  .half-bottom {
+    margin-bottom: 10px !important;
+  }
+}
+
+/* IPHONE 6 LANDSCAPE 667x375 */
+/* NEXUS 5X LANDSCAPE 412x732 */
+/* GALAXY S5 LANDSCAPE 640x360 */
+
+@media only screen and (min-width: 599px) and (max-width: 730px) {
+  #audioplayer {
+    height: 100%;
+    top: calc(-100% + 40px);
+  }
+  #audiocontainer {
+    height: 88px;
+  }
+
+  #trackImage {
+    margin: 8px 5px 0px 8px;
+    width: 70px;
+    height: 70px;
+  }
+
+  #playButton {
+    height: 30px;
+    width: 30px;
+    margin-top: 6px;
+  }
+  #timeline {
+    width: calc(100% - 145px);
+    margin-top: 20px;
+  }
+  #playtime {
+    margin-top: -28px;
+    font-size: 10px;
+  }
+  #trackInfo {
+    margin-top: 0px;
+  }
+  #artistInfo, #artistInfo a, #trackInfo, #trackInfo a {
+    font-size: 82%;
+    line-height: 110%;
+  }
+  #soundcloudLogo {
+    bottom: -55px;
+  }
+  a.menu_icon {
+    bottom: 10px;
+  }
+  .open a.menu_icon {
+    top: auto;
+    bottom: 10px;
     }
 
-      ul.menu {
-        right: -50px;
-      }
-      .intro {
-        width: 80%;
-        line-height: 200%;
-      }
-      .half-top {
-      margin-top: 50px !important;
-      }
-      .half-bottom {
-        margin-bottom: 50px !important;
-      }
+  .intro {
+    width: 80%;
+    line-height: 120%;
+    font-size: 60%;
+    padding-top: 0px;
+  }
+  h1 {
+    font-size: 260%;
+    padding-bottom: 10px;
+    padding-top: 45px;
+  }
+  .sub {
+    font-size: 14px;
+    margin-top: -20px;
+  }
+  .quote {
+    width: 80%;
+    line-height: 180%;
+    font-size: 58%;
+    padding-top: 10px;
+  }
+
+
+
+  .thumb {
+    height: calc(50% - 64px);
+    width: 25%;
+    overflow: hidden;
+  }
+  .thumb img {
+
+      height: 100%;
+  }
+  .caption {
+    font-size: 16px;
+    line-height: 20px;
+    top: 10px;
+    width: 85%
+  }
+  .half-top {
+    margin-bottom: 30px !important;
+  }
+  .half-bottom {
+    margin-bottom: 30px !important;
+  }
+}
+
+/* NEXUS 6P LANSCAPE 732x412 */
+/* IPHONE 6 PLUS LANDSCAPE 736x414 */
+
+@media only screen and (min-width: 731px) and (max-width: 767px) {
+  #audioplayer {
+    height: 100%;
+    top: calc(-100% + 28px);
+  }
+  #audiocontainer {
+    height: 95px;
+  }
+  #trackImage {
+    margin: 7px 5px 0px 8px;
+    width: 80px;
+    height: 80px;
+  }
+  #playButton {
+    margin-top: 5px;
+  }
+
+  #timeline {
+    width: calc(100% - 170px);
+    margin-top: 24px;
+  }
+  #artistInfo, #artistInfo a, #trackInfo, #trackInfo a {
+    font-size: 80%;
+    line-height: 115%;
+  }
+
+  .intro {
+    width: 75%;
+    line-height: 133%;
+    font-size: 65%;
+    padding-top: 0px;
+  }
+  h1 {
+    font-size: 300%;
+  padding-top: 50px;
+    padding-bottom: 0px;
+  }
+  .sub {
+    font-size: 13px;
+  }
+
+  .quote {
+    width: 80%;
+    line-height: 180%;
+    font-size: 70%;
+    padding-top: 20px;
+  }
+
+  .thumb {
+    width: 25%;
+    overflow: hidden;
+    height: 140px;
+  }
+  .thumb img {
+      min-width: 100%;
+      height: 185px;
+  }
+  .caption {
+    font-size: 16px;
+    line-height: 20px;
+    top: 20px;
+    width: 85%;
+  }
+  .menu_icon {
+    bottom: 3px;
+  }
+  .open .menu_icon {
+    bottom: 8px;
+  }
+  .half-top {
+    margin-top: 30px !important;
+  }
+  .half-bottom {
+    margin-bottom: 30px !important;
+  }
+}
+
+/* IPAD 768X1024 */
+
+@media only screen and (min-width: 768px) and (max-width: 1020px) {
+  #audiocontainer {
+    height: 100px;
+  }
+
+  #trackImage {
+    margin: 10px 5px 0px 10px;
+    width: 80px;
+    height: 80px;
+  }
+  #timeline {
+    width: calc(100% - 185px);
+    margin-top: 35px;
+  }
+  #playButton {
+    margin-top: 18px;
+  }
+  #soundcloudLogo {
+    top: 40px;
+  }
+  canvas {
+    font-size: : 16px;
+    letter-spacing: 0px;
+  }
+
+  #audioplayer {
+    height: 100%;
+    top: -979px;
+  }
+  .thumb {
+    width: 50%;
+    height: calc(25% - 40px);
+  }
+  .thumb img {
+    width: 100%;
+    height: 255px;
+  }
+  .thumb:before {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .open a.menu_icon {
+    /*bottom: 20px;
+    top: auto;*/
+  }
+  .caption {
+    font-size: 20px;
+    line-height: 22px;
+    left: 30px;
+    top: 80px;
+    width: 80%;
+    text-align: center;
+  }
+  h1 {
+    padding-top: 140px;
+    font-size: 450%;
+  }
+  .intro {
+    width: 70%;
+    line-height: 180%;
+    font-size: 82%;
+  }
+  .quote {
+    font-size: 82%;
+  }
+  .half-top {
+    margin-top: 50px !important;
+  }
+  .half-bottom {
+    margin-bottom: 50px !important;
+  }
+}
+
+/* IPAD PRO*/
+
+@media only screen and (min-width: 1021px) and (max-width: 1300px) {
+  #audioplayer {
+      height: 100%;
+      top: calc(-100% + 38px);
+  }
+  #audiocontainer {
+    height: 130px;
+  }
+  #playButton {
+    margin-top: 22px;
+  }
+  #timeline {
+    width: calc(100% - 190px);
+  }
+  #soundcloudLogo {
+    bottom: -68px;
+    right: -5px;
+  }
+  #trackImage {
+    margin: 15px 6px 0px 15px;
+    width: 100px;
+    height: 100px;
+  }
+  #artistInfo a {
+    margin-left: 5px;
+  }
+  #artistInfo, #artistInfo a, #trackInfo, #trackInfo a {
+    font-size: 92%;
+    line-height: 120%;
+    display: inline-block;
+  }
+  .thumb {
+    width: 50%;
+    overflow: hidden;
+    height: 295px;
+  }
+  .thumb img {
+    width: 100%;
+    height: auto;
+  }
+  .thumb:before {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .caption {
+    font-size: 105%;
+    line-height: 110%;
+    top: 130px;
+    width: 72%;
+    padding: 0 10% 0 10%;
+    text-align: center;
+    vertical-align: middle;
+  }
+  .menu_icon {
+    bottom: 8px;
+  }
+  .open a.menu_icon {
+    bottom: 15px;
+  }
+
+  h1 {
+    padding-top: 180px;
+    font-size: 500%;
+  }
+  .sub {
+    font-size: 20px;
+  }
+  .intro {
+    width: 60%;
+    line-height: 180%;
+    font-size: 96%;
+    padding-top: 120px;
+  }
+
+  .quote {
+    width: 70%;
+    line-height: 180%;
+    font-size: 130%;
+  }
+  .half-bottom {
+    margin-bottom: 100px !important;
+  }
+}
+
+/* IPAD LANDSCAPE 1024x768 */
+
+@media only screen and (min-width: 1021px) and (max-width: 1300px) and (orientation:landscape){
+  #audioplayer {
+      height: 100%;
+      top: calc(-100% + 37px);
     }
+  #audiocontainer {
+    height: 98px;
+  }
+
+  #artistInfo, #artistInfo a, #trackInfo, #trackInfo a {
+    display: inline-block;
+  }
+  #artistInfo a{
+    margin-left: 5px;
+  }
+  #soundcloudLogo {
+    /*bottom: -84px;*/
+  }
+  #timeline {
+    /*margin-top: 20px;*/
+  }
+  #trackImage {
+    margin: 9px 9px 0px 9px;
+    width: 80px;
+    height: 80px;
+  }
+  .thumb {
+    width: 50%;
+    overflow: hidden;
+    height: calc(25% - 35px);
+  }
+  .thumb img {
+    min-width: 100%;
+    height: auto;
+  }
+  .thumb:before {
+    background: rgba(0, 0, 0, 0.4);
+  }
+  .caption {
+    font-size: 22px;
+    line-height: 30px;
+    top: 60px;
+    width: 80%
+  }
+  a.menu_icon {
+    bottom: 0px;
+  }
+  .open a.menu_icon {
+    bottom: 10px;
+  }
+  h1 {
+    padding-top: 120px;
+    font-size: 450%;
+  }
+  .sub {
+    font-size: 22px;
+  }
+  .intro {
+    width: 66%;
+    line-height: 170%;
+    font-size: 80%;
+    padding-top: 60px;
+  }
+
+  .quote {
+    width: 70%;
+    line-height: 200%;
+    font-size: 100%;
+  }
+
+}
+
+
+/* IPAD PRO LANDSCAPE*/
+
+@media only screen and (min-width: 1300px) and (max-width: 1366px) {
+    #audioplayer {
+      top: calc(-100% + 44px);
+    }
+    #audiocontainer {
+    padding-left: 5px;
+    padding-top: 5px;
+    height: 135px;
+  }
+  #trackImage {
+    margin: 12px 10px 0px 10px;
+    width: 110px;
+    height: 110px;
+  }
+  #timeline {
+    width: calc(100% - 200px);
+    /*margin-top: 20px;*/
+  }
+  #soundcloudLogo {
+    top: 65px;
+  }
+  #trackInfo{
+    margin-top: 5px;
+  }
+  #artistInfo, #artistInfo a, #trackInfo, #trackInfo a {
+    font-size: 105%;
+    line-height: 124%;
+  }
+  h1 {
+    font-size: 550%;
+    padding-top: 140px;
+  }
+  .sub {
+    font-size: 22px;
+  }
+  .intro {
+    width: 85%;
+    line-height: 180%;
+    font-size: 90%;
+    padding-top: 80px;
+  }
+  .quote {
+    width: 60%;
+    line-height: 180%;
+    font-size: 120%;
+  }
+  .thumb {
+    width: 50%;
+    height: 210px;
+  }
+  .thumb img {
+    width: 100%;
+    height: 380px;
+  }
+  .caption {
+    font-size: 30px;
+    line-height: 36px;
+    margin-left: 20px;
+    top: 50px;
+    width: 50%
+  }
+  .open a.menu_icon {
+    bottom: 10px;
+  }
+}
+
+/* LAPTOP AND BEYOND */
+
+@media only screen and (min-width: 1367px) {
+  #audioplayer {
+    top: -180px;
+    height: 220px;
+  }
+  #artistInfo, #trackInfo, #trackInfo a {
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  #timeline {
+    margin-top: 25px;
+    height: 4px;
+  }
+  a.menu_icon {
+    bottom: 8px;
+  }
+  .open a.menu_icon {
+    bottom: 10px;
+  }
+  h1 {
+    padding-bottom: 10px;
+  }
+  .sub {
+    font-size: 70%;
+  }
+  .intro {
+    width: 50%;
+    font-size: 76%;
+  }
+  .quote {
+    max-width: 600px;
+    font-size: 77%;
+    line-height: 220%;
+  }
+
+}

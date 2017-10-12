@@ -47,7 +47,7 @@ rbvj = function() {
             ctx2.lineWidth = 1;
             //ctx2.line(p.pos.x, p.pos.y, p.pos.x, h);
     }
-    drawGraphWhite(txt, TOTAL, sub, sub2);
+    drawGraph(txt, TOTAL, sub, sub2, true);
   }
 
 
@@ -94,14 +94,14 @@ rbvj = function() {
 
     ctx4.clearRect(0,0,w,h);
     var ht = h - 150;
+    $('.under_bar').css('background: rgba(255,255,255,0.4)');
+    // ctx4.fillStyle = rgb(225, 0.2);
+    // ctx4.fillRect(0, ht, w, 90);
 
-    ctx4.fillStyle = rgb(225, 0.2);
-    ctx4.fillRect(0, ht, w, 90);
-
-    ctx4.fillStyle = rgb(0);
-    ctx4.shadowColor= rgb(255, 0.5);
-    ctx4.shadowBlur = 4;
-    ctx.shadowOffsetY = 2;
+    // ctx4.fillStyle = rgb(0);
+    // ctx4.shadowColor= rgb(255, 0.5);
+    // ctx4.shadowBlur = 4;
+    // ctx.shadowOffsetY = 2;
     var pos = map(counter, 0, _num, 0, w);
 
     ctx4.fillStyle = rgb(0);

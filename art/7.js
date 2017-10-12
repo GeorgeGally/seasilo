@@ -1,21 +1,21 @@
 rbvj = function() {
 
   clearCanvases();
-
+  $("#graph").css('visibility','hidden');
   var stripe_height = 700;
   var engine = new particleEngine(2000, 1);
   //console.log(engine.particles);
 
-  var total = 0;
-
+  var TOTAL = 3654;
+  var t = 0;
 
   for (var i = 0; i < engine.particles.length; i++) {
     var p = engine.particles[i];
     p.sz = engine.grid.spacing_x;
     //p.sz = map(data[i], 0, 450, 0, w);
-    p.pos.x = total;
+    p.pos.x = t;
     p.pos.y = 0;
-    total += p.sz;
+    t += p.sz;
 
 
     p.c = randomGrey();
@@ -32,9 +32,11 @@ rbvj = function() {
     for (var i = 0; i < engine.particles.length; i++) {
       var p = engine.particles[i];
 
-      p.pos.x += 1;
-      if (p.pos.x > w) p.pos.x = engine.grid.spacing_x;
-
+      p.pos.x += 2;
+      if (p.pos.x > w) {
+        p.pos.x = randomInt(-20);
+        counter+=1;
+      }
       ctx.fillStyle = p.c;
       ctx.fillRect(p.pos.x, 0, p.sz, h);
       //ctx.fillRect(p.pos.x, 680, p.sz, stripe_height);
@@ -48,15 +50,15 @@ rbvj = function() {
 
   ctx2.font = "15px Arial";
 
+
   function drawGraph(){
 
     ctx2.clearRect(0, 0, w, h);
-    var pos = map(counter, 0, 20000000, 0, w);
+    var pos = map(counter, 0, TOTAL, 0, w);
 
     ctx.fillStyle = rgb(0, 0.3);
     ctx.fillRect(pos, 0, 80, h);
 
-    //var ww = map(counter, 0, w, 0, 20000000);
     ctx.fillStyle = rgb(0, 0.5);
     ctx.fillRect(pos + 1, 0, 5, h);
 
@@ -66,10 +68,10 @@ rbvj = function() {
 
 
     ctx2.fillStyle = "#fff";
-    ctx2.fillText(counter + " containers are at sea today", pos + 20, h - 170);
+    ctx2.fillText("90% of everything we own has come by ship", pos + 20, h - 170);
     ctx2.fillStyle = rgb(200);
-    ctx2.fillText("One line represents 2000 containers", pos + 20, h - 150);
-    counter+=1000;
+    ctx2.fillText("Shanghai annual container volume: " + counter, pos + 20, h - 150);
+    ctx2.fillText("One line represents 100 000 squashed containers", pos + 20, h - 130);
   }
 
 

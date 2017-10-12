@@ -98,14 +98,14 @@ var soundCloud = function(_fft_size) {
 
       var artistLink = document.createElement('a');
       artistLink.setAttribute('href', this.sound.user.permalink_url);
-      artistLink.innerHTML = this.sound.user.username;
+      artistLink.innerHTML = this.sound.user.username.trunc(60);
         var trackLink = document.createElement('a');
       trackLink.setAttribute('href', this.sound.permalink_url);
 
       if(this.sound.kind=="playlist"){
-          trackLink.innerHTML = "<p>" + this.sound.tracks[loader.streamPlaylistIndex].title + "</p>" + "<p>"+loader.sound.title+"</p>";
+          trackLink.innerHTML = "<p>" + this.sound.tracks[loader.streamPlaylistIndex].title.trunc(60) + "</p>" + "<p>"+loader.sound.title+"</p>";
       } else {
-        trackLink.innerHTML = this.sound.title;
+        trackLink.innerHTML = this.sound.title.trunc(60);
       }
 
       //console.log(this.sound);
@@ -178,7 +178,7 @@ var soundCloud = function(_fft_size) {
           var call = {genres: genre }
 
           // get tracks from soundcloud
-          SC.get('/tracks', { genres: genre, tag_list: 'downdempo, chill, chillout, Chill Out, piano, slomo, deep, yoga, spa, relaxing, sleep, massage, meditation, classical, mellow', limit: 100 }, function(tracks) {
+          SC.get('/tracks', { genres: genre, tag_list: 'downdempo, chill, chillout, Chill Out, piano, slomo, deep, yoga, spa, relaxing, sleep, massage, meditation, classical, mellow, Thievery Corporation, Tycho', limit: 100 }, function(tracks) {
 
             if (tracks.errors) {
                 self.errorMessage = "";
@@ -235,29 +235,19 @@ var soundCloud = function(_fft_size) {
 
   function createPlayerUI(audioElement) {
 
-      var audioplayer = document.createElement('div');
-      audioplayer.setAttribute("id", "audioplayer");
-      audioplayer.setAttribute("class", "wrapper");
+      // var audioplayer = document.createElement('div');
+      // audioplayer.setAttribute("id", "audioplayer");
+      // audioplayer.setAttribute("class", "wrapper");
+      var audioplayer = document.getElementById('audioplayer');
+      var container = document.getElementById('audiocontainer');
 
       var trackImageLink = document.createElement('a');
       trackImageLink.setAttribute("id", "trackImageLink");
-      audioplayer.appendChild(trackImageLink);
+      container.appendChild(trackImageLink);
 
       var trackImage = document.createElement('img');
       trackImage.setAttribute("id", "trackImage");
       trackImageLink.appendChild(trackImage);
-
-      var trackInfo = document.createElement('div');
-      trackInfo.setAttribute("id", "trackInfo");
-      audioplayer.appendChild(trackInfo);
-
-      var artistInfo = document.createElement('div');
-      artistInfo.setAttribute("id", "artistInfo");
-      audioplayer.appendChild(artistInfo);
-
-      var container = document.createElement('div');
-      container.setAttribute("id", "audiocontainer");
-      audioplayer.appendChild(container);
 
       var playButton = document.createElement('div');
       playButton.setAttribute("id", "playButton");
@@ -267,6 +257,21 @@ var soundCloud = function(_fft_size) {
       var timeline = document.createElement('div');
       timeline.setAttribute("id", "timeline");
       container.appendChild(timeline);
+
+      var trackInfo = document.createElement('span');
+      trackInfo.setAttribute("id", "trackInfo");
+      container.appendChild(trackInfo);
+
+      var artistInfo = document.createElement('span');
+      artistInfo.setAttribute("id", "artistInfo");
+      container.appendChild(artistInfo);
+
+      // var container = document.createElement('div');
+      // container.setAttribute("id", "audiocontainer");
+      // audioplayer.apendChild(container);
+
+
+
 
       var playhead = document.createElement('div');
       playhead.setAttribute("id", "playhead");
@@ -279,9 +284,9 @@ var soundCloud = function(_fft_size) {
       var soundcloudLogo = document.createElement('img');
       soundcloudLogo.setAttribute("id", "soundcloudLogo");
       soundcloudLogo.setAttribute("src", "http://developers.soundcloud.com/assets/logo_black.png");
-      audioplayer.appendChild(soundcloudLogo);
+      timeline.appendChild(soundcloudLogo);
 
-      body.appendChild(audioplayer);
+      //body.appendChild(audioplayer);
 
       playButton.addEventListener("click", playStop);
       timelineWidth = timeline.offsetWidth - playhead.offsetWidth;

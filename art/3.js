@@ -2,8 +2,8 @@ rbvj = function() {
 
   var TOTAL = 6000000/12;
   var txt = "Number of containers entering the US each month:";
-  var sub = "6 million containers enter the US each year, with goods worth over $1.8 trillion";
-  var sub2 = "";
+  var sub = "6 million containers enter the US each year,";
+  var sub2 = "with goods worth over $1.8 trillion";
 
   counter = 0;
   ctx.background(0);
