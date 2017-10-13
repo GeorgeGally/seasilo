@@ -52,12 +52,12 @@ function drawGraph(txt, _num, sub, sub2, wt){
   }
   var pos = map(counter, 0, _num, 0, w);
   $('.red_bar').width(pos);
-  $('.graph_subtitle').text(txt  + " " + counter);
+  $('.graph_subtitle').html(txt + " " +  counter + "<br><span class='graph_subtitle2'>" + sub + "<br>" + sub2 + "</span>" );
 
-  if(frameCount < 2200) {
-    $('.graph_subtitle2').html(sub  + "<br>" + sub2);
-
-  }
+  // if(frameCount < 2200) {
+  //   $('.graph_subtitle2').html(sub  + "<br>" + sub2);
+  //
+  // }
   if(counter >= _num) {
     currentFile = (currentFile + 1)%totalFiles;
     changeFile(currentFile);
